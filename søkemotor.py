@@ -1,4 +1,4 @@
-
+import re
 
 tekst = []
 
@@ -6,8 +6,8 @@ tekst = []
 def HentTekst(filnavn):
     with open(filnavn, 'r') as fil:
         for linje in fil:
-
-            tekst.append(linje)
+            for ord in linje.split(". ", -1):
+                tekst.append(ord)
 
 def skriv_til_fil(filnavn):
     with open(filnavn, 'w') as txt_file:
